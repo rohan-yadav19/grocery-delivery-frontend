@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cat-fruits-vegetables",
+    "name": "Fresh Fruits & Vegetable",
+    "image": "/assets/categories/fruits-vegetables.png",
+    "description": "Fresh, organic fruits and vegetables delivered daily",
+    "color": "#E6F2EA"
+  },
+  {
+    "id": "cat-cooking-oil",
+    "name": "Cooking Oil & Ghee",
+    "image": "/assets/categories/cooking-oil.png",
+    "description": "Premium cooking oils, ghee, and butter for everyday meals",
+    "color": "#FFF6E3"
+  },
+  {
+    "id": "cat-meat-fish",
+    "name": "Meat & Fish",
+    "image": "/assets/categories/meat-fish.png",
+    "description": "Fresh cuts of meat, poultry, and seafood",
+    "color": "#FDECED"
+  },
+  {
+    "id": "cat-bakery-snacks",
+    "name": "Bakery & Snacks",
+    "image": "/assets/categories/bakery-snacks.png",
+    "description": "Freshly baked breads, pastries, and packaged snacks",
+    "color": "#F3EFFA"
+  },
+  {
+    "id": "cat-dairy-eggs",
+    "name": "Dairy & Eggs",
+    "image": "/assets/categories/dairy-eggs.png",
+    "description": "Farm-fresh dairy products and eggs",
+    "color": "#FFF8E1"
+  },
+  {
+    "id": "cat-beverages",
+    "name": "Beverages",
+    "image": "/assets/categories/beverages.png",
+    "description": "Refreshing juices, sodas, water, and energy drinks",
+    "color": "#EAF4FE"
+  },
+  {
+    "id": "cat-pulses",
+    "name": "Pulses",
+    "image": "/assets/categories/pulses.png",
+    "description": "Lentils, chickpeas, beans, and other protein-rich pulses",
+    "color": "#FFF3E0"
+  },
+  {
+    "id": "cat-rice",
+    "name": "Rice",
+    "image": "/assets/categories/rice.png",
+    "description": "Basmati, brown rice, and specialty grains",
+    "color": "#F1F8E9"
+  }
+]
