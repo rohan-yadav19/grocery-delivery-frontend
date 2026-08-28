@@ -10,6 +10,9 @@ import {
  * searchApi unit tests — focuses on the mock API behaviour and
  * the stale-response mechanism.
  *
+ * Verifies that when Request A ("milk", slow) finishes after Request B ("bread", fast),
+ * stale response A cannot overwrite Request B's active results.
+ *
  * Uses vi.useFakeTimers() for deterministic control of setTimeout delays.
  */
 describe("searchApi", () => {
