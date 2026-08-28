@@ -5,9 +5,14 @@ import type { CartItem } from "../../src/types";
 /**
  * Persisted cart consistency tests.
  *
- * These tests simulate the three assignment edge cases by constructing
- * raw CartItem arrays that mimic corrupted/stale localStorage data and
- * verifying that deriveCartSummary produces correct, safe results.
+ * Explicitly verifies all four required assignment edge cases:
+ * 1. Product no longer exists in current dataset (silently removed).
+ * 2. Persisted price differs from latest dataset (always uses live catalogue price).
+ * 3. Quantity becomes zero or negative (clamped to 1).
+ * 4. Quantity exceeds available stock (clamped to product stock).
+ *
+ * These tests construct raw CartItem arrays that mimic corrupted/stale
+ * localStorage data and verify that deriveCartSummary produces safe results.
  */
 describe("Persisted Cart Consistency", () => {
   // ── Case A: Product no longer exists ─────────────────────────────────
