@@ -16,6 +16,7 @@ interface ProductCardProps {
  *
  * - White card with #E2E2E2 border, rounded-[18px]
  * - Product image, name (2-line clamp), unit, price
+ * - Discount badge + strikethrough original price when `originalPrice` is set
  * - Green "+" add-to-cart action button with immediate checkmark feedback
  * - Links to /product/:id
  */
@@ -68,6 +69,16 @@ export function ProductCard({ product }: ProductCardProps) {
     });
   };
 
+  // Compute discount percentage when originalPrice exists
+  const hasDiscount =
+    product.originalPrice != null && product.originalPrice > product.price;
+  const discountPercent = hasDiscount
+    ? Math.round(
+        ((product.originalPrice! - product.price) / product.originalPrice!) *
+          100,
+      )
+    : 0;
+
   return (
     <article
       className={`product-card ${isAdded ? "product-card--added" : ""}`}
@@ -87,6 +98,13 @@ export function ProductCard({ product }: ProductCardProps) {
             className="product-card__img"
           />
         </div>
+
+        {/* Discount badge */}
+        {hasDiscount && (
+          <span className="product-card__discount-badge" aria-label={`${discountPercent}% off`}>
+            {discountPercent}% OFF
+          </span>
+        )}
       </Link>
 
       {/* Product info */}
@@ -105,9 +123,16 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Bottom row: Price + Add button */}
         <div className="product-card__bottom">
-          <span className="product-card__price">
-            {formatCurrency(product.price)}
-          </span>
+          <div className="product-card__price-group">
+            <span className={`product-card__price ${hasDiscount ? "product-card__price--sale" : ""}`}>
+              {formatCurrency(product.price)}
+            </span>
+            {hasDiscount && (
+              <span className="product-card__original-price">
+                {formatCurrency(product.originalPrice!)}
+              </span>
+            )}
+          </div>
           <button
             type="button"
             onClick={handleAddToCart}

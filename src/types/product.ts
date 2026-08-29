@@ -3,6 +3,8 @@ export interface Product {
   readonly name: string;
   readonly categoryId: string;
   readonly price: number;
+  /** Original price before discount. When present, `price` is the discounted price. */
+  readonly originalPrice?: number;
   readonly unit: string;
   readonly stock: number;
   readonly image: string;
